@@ -1,6 +1,6 @@
 class Member:
     def __init__(self, user_id, first_name, last_name, email, pw, cc_num, post_id,
-                 points, visibility, invited_by, type, login_time, logout_time, date_created,
+                 points, visibility, invited_by, user_type, login_time, logout_time, date_created,
                  birthday, address, phone_number):
         self.user_id = user_id
         self.first_name = first_name
@@ -12,7 +12,7 @@ class Member:
         self.points = points
         self.visibility = visibility
         self.invited_by = invited_by
-        self.type = type
+        self.user_type = user_type
         self.login_time = login_time
         self.logout_time = logout_time
         self.date_created = date_created

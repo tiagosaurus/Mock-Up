@@ -27,10 +27,16 @@ class DBAdaptor:
                                              'sponsored item')
         return self.obj_type
 
-    def add_member(self, member_information: dict()) -> bool:
+    def add_member(self, user_id, first_name, last_name, email, pw, cc_num, invited_by, user_type, birthday, address,
+                   phone_number, date_created) -> Member:
+        new_mem = Member(user_id, first_name, last_name, email, pw, cc_num, [], 0, False, invited_by, user_type,
+                         0, 0, date_created, birthday, address, phone_number)
         # Take in a dictionary
         # Create new object
         # Add to DB
+        if get_type(self) != 'member':
+            raise InvalidObjectTypeException('Object is not of type Member')
+
         pass
 
     def get_member(self, obj_id):
