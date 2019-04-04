@@ -1,4 +1,6 @@
 import Member
+import Post
+import Comment
 
 
 class InvalidObjectTypeException(Exception):
@@ -25,8 +27,7 @@ class DBAdaptor:
                                              'sponsored item')
         return self.obj_type
 
-
-    def add_member(self, member_information:dict()) -> bool:
+    def add_member(self, member_information: dict()) -> bool:
         # Take in a dictionary
         # Create new object
         # Add to DB
@@ -49,6 +50,12 @@ class DBAdaptor:
         # False otherwise
         pass
 
+    def add_post(self, post_information: dict()) -> bool:
+        # Take in a dictionary
+        # Create new object
+        # Add to DB
+        pass
+
     def get_post(self, obj_id):
         # Return Post obj from DB
         pass
@@ -66,6 +73,11 @@ class DBAdaptor:
         # False otherwise
         pass
 
+    def add_comment(self, comment_information: dict()) -> bool:
+        # Take in a dictionary
+        # Create new object
+        # Add to DB
+        pass
 
     def get_comment(self, obj_id):
         # Return comment obj from DB
@@ -84,6 +96,11 @@ class DBAdaptor:
         # False otherwise
         pass
 
+    def add_url(self, url_information: dict()) -> bool:
+        # Take in a dictionary
+        # Create new object
+        # Add to DB
+        pass
 
     def get_url(self, obj_id):
         # Return URl obj from DB
@@ -102,6 +119,11 @@ class DBAdaptor:
         # False otherwise
         pass
 
+    def add_shortened_url(self, shortened_url_information: dict()) -> bool:
+        # Take in a dictionary
+        # Create new object
+        # Add to DB
+        pass
 
     def get_shortened_url(self, obj_id):
         # Return shortened url obj from DB
@@ -120,6 +142,11 @@ class DBAdaptor:
         # False otherwise
         pass
 
+    def add_image(self, image_information: dict()) -> bool:
+        # Take in a dictionary
+        # Create new object
+        # Add to DB
+        pass
 
     def get_image(self, obj_id):
         # Return image obj from DB
@@ -138,6 +165,11 @@ class DBAdaptor:
         # False otherwise
         pass
 
+    def add_filtered_image(self, filtered_image_information: dict()) -> bool:
+        # Take in a dictionary
+        # Create new object
+        # Add to DB
+        pass
 
     def get_filtered_image(self, obj_id):
         # Return filtered image obj from DB
@@ -156,6 +188,12 @@ class DBAdaptor:
         # False otherwise
         pass
 
+    def add_filter(self, filter_information: dict()) -> bool:
+        # Take in a dictionary
+        # Create new object
+        # Add to DB
+        pass
+
     def get_filter(self, obj_id):
         # Return filter obj from DB
         pass
@@ -171,6 +209,12 @@ class DBAdaptor:
     def remove_filter(self, obj_id) -> bool:
         # Returns true if removal was successful
         # False otherwise
+        pass
+
+    def add_sponsored_item(self, sponsored_item_information: dict()) -> bool:
+        # Take in a dictionary
+        # Create new object
+        # Add to DB
         pass
 
     def get_sponsored_item(self, obj_id):
