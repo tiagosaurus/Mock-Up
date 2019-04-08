@@ -11,33 +11,33 @@ Our database of choice is PostgreSQL. We are using the psycopg library as an ada
 We have a singular DBAdaptor class that backend teams can create an instance of in their classes to instantiate and manipulate various objects
 in the system. This adaptor class gives backend teams access to:
    - add methods:
-      | Return Type | Method Call |
-      | :------: | :-----: |
-      | Boolean | add_object_type(object_param_1, object_param_2, ..., object_param_n) |
+      | Return Type | Method Call                                                          |
+      |-------------|----------------------------------------------------------------------|
+      | Boolean     | add_object_type(object_param_1, object_param_2, ..., object_param_n) |
       - Take in several required parameters
       - Access relevant DB table
       - Input required parameters from method call into the table
       - Returns a boolean indicating whether or not the data object was successfully added
    - get methods:
-      | Return Type | Method Call |
-      |:------:| :------: |
-      | Object | get_object_type(obj_id) |
+      | Return Type | Method Call             |
+      |-------------|-------------------------|
+      | Object      | get_object_type(obj_id) |
       - Take in an id
       - Pull all relevant fields from database table
       - Create an instance of the object
       - Returns instance of the relevant object
    - set methods:
-      | Return Type | Method Call |
-      |:-------:| :-------: |
-      | Object | set_object_type(self, optional_change_param_1, ..., optional_change_param_n) |
+      | Return Type | Method Call                                                                  |
+      |-------------|------------------------------------------------------------------------------|
+      | Object      | set_object_type(self, optional_change_param_1, ..., optional_change_param_n) |
       - Take in a set of optional parameters that want to be changed
       - Generate an instance of the specified object (call get_object)
       - Update relevant fields of object, leaving non-specified fields the same as before
       - Return an instance of the updated object
    - remove methods:
-      | Return Type | Method Call |
-      |:--------:| :------: |
-      | Boolean | remove_object_type(obj_id) |
+      | Return Type | Method Call                |
+      |-------------|----------------------------|
+      | Boolean     | remove_object_type(obj_id) |
       - Take in an object id
       - Access relevant DB table and remove object and all associated fields from DB
       - Returns a boolean indicating whether or not the deletion occurred successfully
