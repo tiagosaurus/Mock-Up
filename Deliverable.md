@@ -66,6 +66,7 @@ which instantiate instances of:
 ### Unit Testing
 
 Currently we have unit tests set up that test:
+
    1. Adding a new member to the database then retrieving it immediately after.
    
    2.a. Retrieving a previously existing member from DB and instantiating an instance of a Member object.
