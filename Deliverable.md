@@ -49,6 +49,114 @@ in the system. This adaptor class gives backend teams access to:
       - Take in an object id
       - Access relevant DB table and remove object and all associated fields from DB
       - Returns a boolean indicating whether or not the deletion occurred successfully
+      
+#### Member API
+
+| Return Type | Method Call                                                          |
+|-------------|----------------------------------------------------------------------|
+| Boolean     | add_object_type(object_param_1, object_param_2, ..., object_param_n) |
+
+| Return Type | Method Call             |
+|-------------|-------------------------|
+| Object      | get_object_type(obj_id) |
+
+| Return Type | Method Call                                                                  |
+|-------------|------------------------------------------------------------------------------|
+| Object      | set_object_type(self, optional_change_param_1, ..., optional_change_param_n) |
+      
+| Return Type | Method Call                |
+|-------------|----------------------------|
+| Boolean     | remove_object_type(obj_id) |
+      
+#### Post API
+
+| Return Type | Method Call                                                          |
+|-------------|----------------------------------------------------------------------|
+| Boolean     | add_object_type(object_param_1, object_param_2, ..., object_param_n) |
+
+| Return Type | Method Call             |
+|-------------|-------------------------|
+| Object      | get_object_type(obj_id) |
+
+| Return Type | Method Call                                                                  |
+|-------------|------------------------------------------------------------------------------|
+| Object      | set_object_type(self, optional_change_param_1, ..., optional_change_param_n) |
+      
+| Return Type | Method Call                |
+|-------------|----------------------------|
+| Boolean     | remove_object_type(obj_id) |
+
+#### Comment API
+
+| Return Type | Method Call                                                          |
+|-------------|----------------------------------------------------------------------|
+| Boolean     | add_object_type(object_param_1, object_param_2, ..., object_param_n) |
+
+| Return Type | Method Call             |
+|-------------|-------------------------|
+| Object      | get_object_type(obj_id) |
+
+| Return Type | Method Call                                                                  |
+|-------------|------------------------------------------------------------------------------|
+| Object      | set_object_type(self, optional_change_param_1, ..., optional_change_param_n) |
+      
+| Return Type | Method Call                |
+|-------------|----------------------------|
+| Boolean     | remove_object_type(obj_id) |
+
+#### Image API
+
+| Return Type | Method Call                                                          |
+|-------------|----------------------------------------------------------------------|
+| Boolean     | add_object_type(object_param_1, object_param_2, ..., object_param_n) |
+
+| Return Type | Method Call             |
+|-------------|-------------------------|
+| Object      | get_object_type(obj_id) |
+
+| Return Type | Method Call                                                                  |
+|-------------|------------------------------------------------------------------------------|
+| Object      | set_object_type(self, optional_change_param_1, ..., optional_change_param_n) |
+      
+| Return Type | Method Call                |
+|-------------|----------------------------|
+| Boolean     | remove_object_type(obj_id) |
+
+#### Filter API
+
+| Return Type | Method Call                                                          |
+|-------------|----------------------------------------------------------------------|
+| Boolean     | add_object_type(object_param_1, object_param_2, ..., object_param_n) |
+
+| Return Type | Method Call             |
+|-------------|-------------------------|
+| Object      | get_object_type(obj_id) |
+
+| Return Type | Method Call                                                                  |
+|-------------|------------------------------------------------------------------------------|
+| Object      | set_object_type(self, optional_change_param_1, ..., optional_change_param_n) |
+      
+| Return Type | Method Call                |
+|-------------|----------------------------|
+| Boolean     | remove_object_type(obj_id) |
+
+### Credit Card API
+
+| Return Type | Method Call                                                          |
+|-------------|----------------------------------------------------------------------|
+| Boolean     | add_object_type(object_param_1, object_param_2, ..., object_param_n) |
+
+| Return Type | Method Call             |
+|-------------|-------------------------|
+| Object      | get_object_type(obj_id) |
+
+| Return Type | Method Call                                                                  |
+|-------------|------------------------------------------------------------------------------|
+| Object      | set_object_type(self, optional_change_param_1, ..., optional_change_param_n) |
+      
+| Return Type | Method Call                |
+|-------------|----------------------------|
+| Boolean     | remove_object_type(obj_id) |
 
 ### Private API
 
