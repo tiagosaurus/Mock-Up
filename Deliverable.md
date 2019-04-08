@@ -179,31 +179,31 @@ which instantiate instances of:
 
 | Return Type       | Method Call                |
 |-------------      |----------------------------|
-| Comment Object     | |
+| Comment Object    | Comment(self, replies, post_id, user_id, content, date_created, by_admin) |
 
 #### Post
 
 | Return Type       | Method Call                |
 |-------------      |----------------------------|
-| Post Object     | |
+| Post Object       | Post(self, comments, image_id, user_id, urls, shortened_urls, date_created, date_modified, is_flagged, points_given, content, by_admin) |
 
 #### Image
 
 | Return Type       | Method Call                |
 |-------------      |----------------------------|
-| Image Object     | |
+| Image Object      | Image(self, filter_id, original_image_id, is_flagged, by_admin) |
 
 #### Filter
 
 | Return Type       | Method Call                |
 |-------------      |----------------------------|
-| Filter Object     | |
+| Filter Object     | Filter(self, filter_id, preview_url) |
 
 #### Credit Card
 
 | Return Type       | Method Call                |
 |-------------      |----------------------------|
-| Member Card Object     | |
+| Credit Card Object| CreditCard(self, card_num, cvv, holder_name, exp_date, date_added, currently_used, user_id) |
 
 
 ## Testing Plans
