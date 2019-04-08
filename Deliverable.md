@@ -224,6 +224,6 @@ backend teams.
 
 ## Class Diagram
 
-![](er1.png)
+![alt-text](https://github.com/320-group4/High-Level-Requirements/blob/master/er1.png)
 
 
