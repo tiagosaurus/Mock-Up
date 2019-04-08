@@ -12,7 +12,7 @@ We have a singular DBAdaptor class that backend teams can create an instance of 
 in the system. This adaptor class gives backend teams access to:
    - add methods:
       | Return Type | Method Call |
-      |:-----------:| :-------------------------: |
+      | :------: | :-----: |
       | Boolean | add_object_type(object_param_1, object_param_2, ..., object_param_n) |
       - Take in several required parameters
       - Access relevant DB table
@@ -20,7 +20,7 @@ in the system. This adaptor class gives backend teams access to:
       - Returns a boolean indicating whether or not the data object was successfully added
    - get methods:
       | Return Type | Method Call |
-      |:-----------:| :-------------------------: |
+      |:------:| :------: |
       | Object | get_object_type(obj_id) |
       - Take in an id
       - Pull all relevant fields from database table
@@ -28,7 +28,7 @@ in the system. This adaptor class gives backend teams access to:
       - Returns instance of the relevant object
    - set methods:
       | Return Type | Method Call |
-      |:-----------:| :-------------------------: |
+      |:-------:| :-------: |
       | Object | set_object_type(self, optional_change_param_1, ..., optional_change_param_n) |
       - Take in a set of optional parameters that want to be changed
       - Generate an instance of the specified object (call get_object)
@@ -36,7 +36,7 @@ in the system. This adaptor class gives backend teams access to:
       - Return an instance of the updated object
    - remove methods:
       | Return Type | Method Call |
-      |:-----------:| :-------------------------: |
+      |:--------:| :------: |
       | Boolean | remove_object_type(obj_id) |
       - Take in an object id
       - Access relevant DB table and remove object and all associated fields from DB
