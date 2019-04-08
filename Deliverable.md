@@ -14,12 +14,12 @@ in the system. This adaptor class gives backend teams access to:
    
       | Return Type | Method Call                                                          |
       |-------------|----------------------------------------------------------------------|
-      | Boolean     | add_object_type(object_param_1, object_param_2, ..., object_param_n) |
+      | Object      | add_object_type(object_param_1, object_param_2, ..., object_param_n) |
       
       - Take in several required parameters
       - Access relevant DB table
       - Input required parameters from method call into the table
-      - Returns a boolean indicating whether or not the data object was successfully added
+      - Returns an instance of the newly added object
    - get methods:
    
       | Return Type | Method Call             |
@@ -54,15 +54,15 @@ in the system. This adaptor class gives backend teams access to:
 
 | Return Type | Method Call                                                          |
 |-------------|----------------------------------------------------------------------|
-| Boolean     | add_object_type(object_param_1, object_param_2, ..., object_param_n) |
+| Member     | add_object_type(object_param_1, object_param_2, ..., object_param_n) |
 
 | Return Type | Method Call             |
 |-------------|-------------------------|
-| Object      | get_object_type(obj_id) |
+| Member      | get_object_type(obj_id) |
 
 | Return Type | Method Call                                                                  |
 |-------------|------------------------------------------------------------------------------|
-| Object      | set_object_type(self, optional_change_param_1, ..., optional_change_param_n) |
+| Member      | set_object_type(self, optional_change_param_1, ..., optional_change_param_n) |
       
 | Return Type | Method Call                |
 |-------------|----------------------------|
@@ -72,15 +72,15 @@ in the system. This adaptor class gives backend teams access to:
 
 | Return Type | Method Call                                                          |
 |-------------|----------------------------------------------------------------------|
-| Boolean     | add_object_type(object_param_1, object_param_2, ..., object_param_n) |
+| Post     | add_object_type(object_param_1, object_param_2, ..., object_param_n) |
 
 | Return Type | Method Call             |
 |-------------|-------------------------|
-| Object      | get_object_type(obj_id) |
+| Post      | get_object_type(obj_id) |
 
 | Return Type | Method Call                                                                  |
 |-------------|------------------------------------------------------------------------------|
-| Object      | set_object_type(self, optional_change_param_1, ..., optional_change_param_n) |
+| Post      | set_object_type(self, optional_change_param_1, ..., optional_change_param_n) |
       
 | Return Type | Method Call                |
 |-------------|----------------------------|
@@ -90,15 +90,15 @@ in the system. This adaptor class gives backend teams access to:
 
 | Return Type | Method Call                                                          |
 |-------------|----------------------------------------------------------------------|
-| Boolean     | add_object_type(object_param_1, object_param_2, ..., object_param_n) |
+| Comment     | add_object_type(object_param_1, object_param_2, ..., object_param_n) |
 
 | Return Type | Method Call             |
 |-------------|-------------------------|
-| Object      | get_object_type(obj_id) |
+| Comment      | get_object_type(obj_id) |
 
 | Return Type | Method Call                                                                  |
 |-------------|------------------------------------------------------------------------------|
-| Object      | set_object_type(self, optional_change_param_1, ..., optional_change_param_n) |
+| Comment      | set_object_type(self, optional_change_param_1, ..., optional_change_param_n) |
       
 | Return Type | Method Call                |
 |-------------|----------------------------|
@@ -108,33 +108,33 @@ in the system. This adaptor class gives backend teams access to:
 
 | Return Type | Method Call                                                          |
 |-------------|----------------------------------------------------------------------|
-| Boolean     | add_object_type(object_param_1, object_param_2, ..., object_param_n) |
+| Image     | add_object_type(object_param_1, object_param_2, ..., object_param_n) |
 
 | Return Type | Method Call             |
 |-------------|-------------------------|
-| Object      | get_object_type(obj_id) |
+| Image      | get_object_type(obj_id) |
 
 | Return Type | Method Call                                                                  |
 |-------------|------------------------------------------------------------------------------|
-| Object      | set_object_type(self, optional_change_param_1, ..., optional_change_param_n) |
+| Image      | set_object_type(self, optional_change_param_1, ..., optional_change_param_n) |
       
 | Return Type | Method Call                |
 |-------------|----------------------------|
-| Boolean     | remove_object_type(obj_id) |
+| Image     | remove_object_type(obj_id) |
 
 #### Filter API
 
 | Return Type | Method Call                                                          |
 |-------------|----------------------------------------------------------------------|
-| Boolean     | add_object_type(object_param_1, object_param_2, ..., object_param_n) |
+| Filter     | add_object_type(object_param_1, object_param_2, ..., object_param_n) |
 
 | Return Type | Method Call             |
 |-------------|-------------------------|
-| Object      | get_object_type(obj_id) |
+| Filter      | get_object_type(obj_id) |
 
 | Return Type | Method Call                                                                  |
 |-------------|------------------------------------------------------------------------------|
-| Object      | set_object_type(self, optional_change_param_1, ..., optional_change_param_n) |
+| Filter      | set_object_type(self, optional_change_param_1, ..., optional_change_param_n) |
       
 | Return Type | Method Call                |
 |-------------|----------------------------|
@@ -144,15 +144,15 @@ in the system. This adaptor class gives backend teams access to:
 
 | Return Type | Method Call                                                          |
 |-------------|----------------------------------------------------------------------|
-| Boolean     | add_object_type(object_param_1, object_param_2, ..., object_param_n) |
+| CreditCard     | add_object_type(object_param_1, object_param_2, ..., object_param_n) |
 
 | Return Type | Method Call             |
 |-------------|-------------------------|
-| Object      | get_object_type(obj_id) |
+| CreditCard      | get_object_type(obj_id) |
 
 | Return Type | Method Call                                                                  |
 |-------------|------------------------------------------------------------------------------|
-| Object      | set_object_type(self, optional_change_param_1, ..., optional_change_param_n) |
+| CreditCard      | set_object_type(self, optional_change_param_1, ..., optional_change_param_n) |
       
 | Return Type | Method Call                |
 |-------------|----------------------------|
@@ -212,7 +212,9 @@ which instantiate instances of:
 
 Currently we have unit tests set up that test:
 
-   1.a. Adding a new member to the database then retrieving it immediately after.
+   1.a. Adding a new member to the database and saving the returned object in a member variable.
+        Fetching a different instance of that object in the database.
+        Checking that the two instances are equal to one another. 
    
    2.a. Retrieving a previously existing member from DB and instantiating an instance of a Member object.
         Then testing this against a premade Member object to ensure that the object parameters are identical.
