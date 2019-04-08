@@ -222,6 +222,8 @@ with backend teams to retest our current test suite to ensure that the public AP
 backend teams. 
 
 
+## Class Diagram
 
+![](er1.png)
 
 
