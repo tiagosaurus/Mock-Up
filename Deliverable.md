@@ -8,8 +8,7 @@ Our database of choice is PostgreSQL. We are using the psycopg library as an ada
 
 ### Public API
 
-We have a singular DBAdaptor class that backend teams can create an instance of in their classes to instantiate and manipulate various objects
-in the system. This adaptor class gives backend teams access to:
+We have a singular DBAdaptor class that backend teams can create an instance of in their classes to instantiate and manipulate various objects in the system. This adaptor class gives backend teams access to:
    - add methods:
    
       | Return Type | Method Call                                                          |
@@ -54,91 +53,88 @@ in the system. This adaptor class gives backend teams access to:
 
 | Return Type | Method Call                                                          |
 |-------------|----------------------------------------------------------------------|
-| Boolean     | add_object_type(object_param_1, object_param_2, ..., object_param_n) |
+| Member      | add_member(self, user_id, first_name, last_name, email, pw, cc_num, 
+               invited_by, user_type, birthday, address, phone_number, date_created) |
 
-| Return Type | Method Call             |
-|-------------|-------------------------|
-| Object      | get_object_type(obj_id) |
+| Return Type | Method Call              |
+|-------------|--------------------------|
+| Member      | get_member(self, obj_id) |
 
 | Return Type | Method Call                                                                  |
 |-------------|------------------------------------------------------------------------------|
-| Object      | set_object_type(self, optional_change_param_1, ..., optional_change_param_n) |
+| Boolean     | set_member(self, new_information: dict(), obj_id)                            |
       
 | Return Type | Method Call                |
 |-------------|----------------------------|
-| Boolean     | remove_object_type(obj_id) |
+| Boolean     | remove_member(self, obj_id) |
       
 #### Post API
 
 | Return Type | Method Call                                                          |
 |-------------|----------------------------------------------------------------------|
-| Boolean     | add_object_type(object_param_1, object_param_2, ..., object_param_n) |
+| Post        | add_post(self, post_information: dict())                             |
 
-| Return Type | Method Call             |
-|-------------|-------------------------|
-| Object      | get_object_type(obj_id) |
+| Return Type | Method Call                                      |
+|-------------|--------------------------------------------------| 
+| Boolean     | set_post(self, new_information: dict(), obj_id)  |
 
 | Return Type | Method Call                                                                  |
 |-------------|------------------------------------------------------------------------------|
-| Object      | set_object_type(self, optional_change_param_1, ..., optional_change_param_n) |
-      
-| Return Type | Method Call                |
-|-------------|----------------------------|
-| Boolean     | remove_object_type(obj_id) |
+| Boolean     | remove_post(self, obj_id)                                                    |
 
 #### Comment API
 
 | Return Type | Method Call                                                          |
 |-------------|----------------------------------------------------------------------|
-| Boolean     | add_object_type(object_param_1, object_param_2, ..., object_param_n) |
+| Comment     | add_comment(self, comment_information: dict())                       |
 
-| Return Type | Method Call             |
-|-------------|-------------------------|
-| Object      | get_object_type(obj_id) |
+| Return Type | Method Call               |
+|-------------|---------------------------|
+| Comment     | get_comment(self, obj_id) |
 
 | Return Type | Method Call                                                                  |
 |-------------|------------------------------------------------------------------------------|
-| Object      | set_object_type(self, optional_change_param_1, ..., optional_change_param_n) |
+| Boolean     | set_comment(self, new_information: dict(), obj_id)                           |
       
-| Return Type | Method Call                |
-|-------------|----------------------------|
-| Boolean     | remove_object_type(obj_id) |
+| Return Type | Method Call                  |
+|-------------|------------------------------|
+| Boolean     | remove_comment(self, obj_id) |
 
 #### Image API
 
 | Return Type | Method Call                                                          |
 |-------------|----------------------------------------------------------------------|
-| Boolean     | add_object_type(object_param_1, object_param_2, ..., object_param_n) |
+| Image       | add_image(self, image_information: dict())                           |
 
 | Return Type | Method Call             |
 |-------------|-------------------------|
-| Object      | get_object_type(obj_id) |
+| Image       | get_image(self, obj_id) |
 
 | Return Type | Method Call                                                                  |
 |-------------|------------------------------------------------------------------------------|
-| Object      | set_object_type(self, optional_change_param_1, ..., optional_change_param_n) |
+| Image       | set_image(self, new_information: dict(), obj_id)                             |
       
 | Return Type | Method Call                |
 |-------------|----------------------------|
-| Boolean     | remove_object_type(obj_id) |
+| Boolean     | remove_image(self, obj_id) |
 
 #### Filter API
 
 | Return Type | Method Call                                                          |
 |-------------|----------------------------------------------------------------------|
-| Boolean     | add_object_type(object_param_1, object_param_2, ..., object_param_n) |
-
-| Return Type | Method Call             |
-|-------------|-------------------------|
-| Object      | get_object_type(obj_id) |
+| Boolean     | add_filter(self, filter_information: dict())                         |
+  
+| Return Type | Method Call              |
+|-------------|--------------------------|
+| Filter      | get_filter(self, obj_id) |
 
 | Return Type | Method Call                                                                  |
 |-------------|------------------------------------------------------------------------------|
-| Object      | set_object_type(self, optional_change_param_1, ..., optional_change_param_n) |
+| Boolean     | set_filter(self, new_information: dict(), obj_id)                            |
       
-| Return Type | Method Call                |
-|-------------|----------------------------|
-| Boolean     | remove_object_type(obj_id) |
+| Return Type | Method Call                 |
+|-------------|-----------------------------|
+| Boolean     | remove_filter(self, obj_id) |
 
 ### Credit Card API
 
@@ -160,7 +156,7 @@ in the system. This adaptor class gives backend teams access to:
 
 ### Private API
 
-We currently have private constructors that can only be accessed through privae method calls in our DBAdaptor class 
+We currently have private constructors that can only be accessed through private method calls in our DBAdaptor class 
 which instantiate instances of:
    - Member objects
    - Post objects
@@ -168,43 +164,6 @@ which instantiate instances of:
    - Comment objects
    - Credit Card objects
    - Filter objects
-   
-#### Member
-
-| Return Type       | Method Call                |
-|-------------      |----------------------------|
-| Member Object     | Member(self, user_id, first_name, last_name, email, pw, cc_num, post_id, points, visibility, invited_by, user_type, login_time, logout_time, date_created, birthday, address, phone_number) |
-                
-#### Comment 
-
-| Return Type       | Method Call                |
-|-------------      |----------------------------|
-| Comment Object     | |
-
-#### Post
-
-| Return Type       | Method Call                |
-|-------------      |----------------------------|
-| Post Object     | |
-
-#### Image
-
-| Return Type       | Method Call                |
-|-------------      |----------------------------|
-| Image Object     | |
-
-#### Filter
-
-| Return Type       | Method Call                |
-|-------------      |----------------------------|
-| Filter Object     | |
-
-#### Credit Card
-
-| Return Type       | Method Call                |
-|-------------      |----------------------------|
-| Member Card Object     | |
-
 
 ## Testing Plans
 
@@ -243,7 +202,6 @@ More specifically, we will create almost identical tests for:
    - Comment objects
    - Filter Objects
    - Credit card objects
-   
 As well as more specific unit tests for each individual object once they are fully implemented in the system. 
 
 Some edges cases we are looking out for:
@@ -260,8 +218,6 @@ with backend teams to retest our current test suite to ensure that the public AP
 backend teams. 
 
 
-## Class Diagram
 
-![alt-text](https://github.com/320-group4/High-Level-Requirements/blob/master/er1.png)
 
 
