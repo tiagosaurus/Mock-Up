@@ -168,6 +168,45 @@ which instantiate instances of:
    - Comment objects
    - Credit Card objects
    - Filter objects
+   
+#### Member
+
+| Return Type       | Method Call                |
+|-------------      |----------------------------|
+| Member Object     | Member(self, user_id, first_name, last_name, email, pw, cc_num, post_id,
+                 points, visibility, invited_by, user_type, login_time, logout_time, date_created,
+                 birthday, address, phone_number) |
+                
+#### Comment 
+
+| Return Type       | Method Call                |
+|-------------      |----------------------------|
+| Comment Object     | |
+
+#### Post
+
+| Return Type       | Method Call                |
+|-------------      |----------------------------|
+| Post Object     | |
+
+#### Image
+
+| Return Type       | Method Call                |
+|-------------      |----------------------------|
+| Image Object     | |
+
+#### Filter
+
+| Return Type       | Method Call                |
+|-------------      |----------------------------|
+| Filter Object     | |
+
+#### Credit Card
+
+| Return Type       | Method Call                |
+|-------------      |----------------------------|
+| Member Card Object     | |
+
 
 ## Testing Plans
 
@@ -206,6 +245,7 @@ More specifically, we will create almost identical tests for:
    - Comment objects
    - Filter Objects
    - Credit card objects
+   
 As well as more specific unit tests for each individual object once they are fully implemented in the system. 
 
 Some edges cases we are looking out for:
