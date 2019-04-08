@@ -67,22 +67,27 @@ which instantiate instances of:
 
 Currently we have unit tests set up that test:
    1. Adding a new member to the database then retrieving it immediately after.
-   2a. Retrieving a previously existing member from DB and instantiating an instance of a Member object.
+   
+   2.a. Retrieving a previously existing member from DB and instantiating an instance of a Member object.
       Then testing this against a premade Member object to ensure that the object parameters are identical.
-   2b. Attempt to retrieve a non-existing member object.
+      
+   2.b. Attempt to retrieve a non-existing member object.
        Ensure that a null value is returned - indicating that this member does not exist in the system. 
-   3a. Retrieving a previously existing member from DB.
+       
+   3.a. Retrieving a previously existing member from DB.
       Changing one specific parameter associated with the Member object.
       Retrieving the same member from the DB after the changes have been made.
       Ensuring that this instance of the member is identical to a premade member object with the desired values in each parameter.
-   3b. Retrieving a previously existing member from DB.
+      
+   3.b. Retrieving a previously existing member from DB.
       Changing multiple specific parameters associated with the Member object.
       Retrieving the same member from the DB after the changes have been made.
       Ensuring that this instance of the member is identical to a premade member object with the desired values in each parameter.
+      
    4. Deleting an instance of a previously existing member and ensuring that the boolean returned correctly indicates whether or not
       the member is actually gone from the DB table.
-   4b. Deleting a non-existing member from the DB and ensuring that the remove method returns false and correctly handles a non-existing
-      object in the system. 
+      
+   4.b. Deleting a non-existing member from the DB and ensuring that the remove method returns false and correctly handles a non-               existing object in the system. 
       
 As we continue developing our adaptor we plan to develop similar tests for each different object in the system.
 
