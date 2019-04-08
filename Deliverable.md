@@ -173,9 +173,7 @@ which instantiate instances of:
 
 | Return Type       | Method Call                |
 |-------------      |----------------------------|
-| Member Object     | Member(self, user_id, first_name, last_name, email, pw, cc_num, post_id,
-                 points, visibility, invited_by, user_type, login_time, logout_time, date_created,
-                 birthday, address, phone_number) |
+| Member Object     | Member(self, user_id, first_name, last_name, email, pw, cc_num, post_id, points, visibility, invited_by, user_type, login_time, logout_time, date_created, birthday, address, phone_number) |
                 
 #### Comment 
 
