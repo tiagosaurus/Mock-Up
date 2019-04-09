@@ -4,12 +4,11 @@
 
 ### Database and Libraries
 
-Our database of choice is PostgreSQL. We are using the psycopg library as an adapter to make PostgreSQL work with our Django project. 
+Our database of choice is PostgreSQL. We are using the psycopg library as an adapter to use PostgreSQL within our Django project. 
 
 ### Public API
 
-We have a singular DBAdaptor class that backend teams can create an instance of in their classes to instantiate and manipulate various objects
-in the system. This adaptor class gives backend teams access to:
+We have a singular DBAdaptor class that that backend teams can create an instance of in their classes to instantiate and manipulate various objects in the system. This adaptor class gives backend teams access to:
    - add methods:
    
       | Return Type | Method Call                                                          |
@@ -20,70 +19,74 @@ in the system. This adaptor class gives backend teams access to:
       - Access relevant DB table
       - Input required parameters from method call into the table
       - Returns an instance of the newly added object
+      
    - get methods:
    
       | Return Type | Method Call             |
       |-------------|-------------------------|
       | Object      | get_object_type(obj_id) |
       
-      - Take in an id
-      - Pull all relevant fields from database table
-      - Create an instance of the object
+      - Takes in an id
+      - Pulls all relevant fields from database table
+      - Creates an instance of the object
       - Returns instance of the relevant object
+      
    - set methods:
    
       | Return Type | Method Call                                                                  |
       |-------------|------------------------------------------------------------------------------|
       | Object      | set_object_type(self, optional_change_param_1, ..., optional_change_param_n) |
       
-      - Take in a set of optional parameters that want to be changed
-      - Generate an instance of the specified object (call get_object)
-      - Update relevant fields of object, leaving non-specified fields the same as before
-      - Return an instance of the updated object
+      - Takes in a set of optional parameters to be changed
+      - Generates an instance of the specified object (call get_object)
+      - Updates relevant fields of object, leaving non-specified fields untouched
+      - Returns an instance of the updated object
+      
    - remove methods:
    
       | Return Type | Method Call                |
       |-------------|----------------------------|
       | Boolean     | remove_object_type(obj_id) |
       
-      - Take in an object id
-      - Access relevant DB table and remove object and all associated fields from DB
+      - Takes in an object id
+      - Accesses relevant DB table and removes object and all associated fields from DB
       - Returns a boolean indicating whether or not the deletion occurred successfully
       
 #### Member API
 
-| Return Type | Method Call                                                                                                                |
-|-------------|----------------------------------------------------------------------------------------------------------------------------|
-| Member      | add_member(self, user_id, first_name, last_name, email, pw, cc_num, invited_by, user_type, birthday, address, phone number, date_created)                                                                                                                              |           
-| Member      | get_member(self, obj_id)                                                                                                   |
-| Boolean     | set_member(self, new_information: dict(), obj_id)                                                                          | 
-| Boolean     | remove_member(self, obj_id)  
+| Return Type   | Method Call                                                                                                         |
+|---------------|---------------------------------------------------------------------------------------------------------------------|
+| Member Object | add_member(self, user_id, first_name, last_name, email, pw, cc_num, invited_by, user_type, birthday, address, phone number, date_created)                                                                                                                 |           
+| Member Object | get_member(self, obj_id)                                                                                            |
+| Boolean       | set_member(self, new_information: dict(), obj_id)                                                                   |     
+| Boolean       | remove_member(self, obj_id)                                                                                         |
       
 #### Post API
 
 | Return Type | Method Call                                                          |
 |-------------|----------------------------------------------------------------------|
-| Post        | add_post(self, post_information: dict())                             |
+| Post Object | add_post(self, post_information: dict())                             |
+| Post Object | get_post(self, obj_id)                                               |
 | Boolean     | set_post(self, new_information: dict(), obj_id)                      |
 | Boolean     | remove_post(self, obj_id)                                            |
 
 #### Comment API
 
-| Return Type | Method Call                                        |
-|-------------|----------------------------------------------------|
-| Comment     | add_comment(self, comment_information: dict())     |
-| Comment     | get_comment(self, obj_id)                          |
-| Boolean     | set_comment(self, new_information: dict(), obj_id) |
-| Boolean     | remove_comment(self, obj_id)                       | 
+| Return Type    | Method Call                                        |
+|----------------|----------------------------------------------------|
+| Comment Object | add_comment(self, comment_information: dict())     |
+| Comment Object | get_comment(self, obj_id)                          |
+| Boolean        | set_comment(self, new_information: dict(), obj_id) |
+| Boolean        | remove_comment(self, obj_id)                       | 
 
 #### Image API
 
-| Return Type | Method Call                                                          |
-|-------------|----------------------------------------------------------------------|
-| Image       | add_image(self, image_information: dict())                           |
-| Image       | get_image(self, obj_id)                                              |
-| Image       | set_image(self, new_information: dict(), obj_id)                     |
-| Boolean     | remove_image(self, obj_id)                                           |
+| Return Type  | Method Call                                                          |
+|--------------|----------------------------------------------------------------------|
+| Image Object | add_image(self, image_information: dict())                           |
+| Image Object | get_image(self, obj_id)                                              |
+| Image Object | set_image(self, new_information: dict(), obj_id)                     |
+| Boolean      | remove_image(self, obj_id)                                           |
 
 #### Filter API
 
@@ -122,40 +125,40 @@ which instantiate instances of:
                 
 #### Comment 
 
-| Return Type       | Method Call                |
-|-------------      |----------------------------|
-| Comment Object    | Comment(self, replies, post_id, user_id, content, date_created, by_admin) |
+| Return Type    | Method Call                                                               |
+|----------------|---------------------------------------------------------------------------|
+| Comment Object | Comment(self, replies, post_id, user_id, content, date_created, by_admin) |
 
 #### Post
 
-| Return Type       | Method Call                |
-|-------------      |----------------------------|
-| Post Object       | Post(self, comments, image_id, user_id, urls, shortened_urls, date_created, date_modified, is_flagged, points_given, content, by_admin) |
+| Return Type | Method Call                |
+|-------------|----------------------------|
+| Post Object | Post(self, comments, image_id, user_id, urls, shortened_urls, date_created, date_modified, is_flagged, points_given, content, by_admin) |
 
 #### Image
 
-| Return Type       | Method Call                |
-|-------------      |----------------------------|
-| Image Object      | Image(self, filter_id, original_image_id, is_flagged, by_admin) |
+| Return Type  | Method Call                |
+|------------- |----------------------------|
+| Image Object | Image(self, filter_id, original_image_id, is_flagged, by_admin) |
 
 #### Filter
 
-| Return Type       | Method Call                |
-|-------------      |----------------------------|
-| Filter Object     | Filter(self, filter_id, preview_url) |
+| Return Type   | Method Call                          |
+|---------------|--------------------------------------|
+| Filter Object | Filter(self, filter_id, preview_url) |
 
 #### Credit Card
 
-| Return Type       | Method Call                |
-|-------------      |----------------------------|
-| Credit Card Object| CreditCard(self, card_num, cvv, holder_name, exp_date, date_added, currently_used, user_id) |
+| Return Type        | Method Call                                                                                 |
+|-------------       |---------------------------------------------------------------------------------------------|
+| Credit Card Object | CreditCard(self, card_num, cvv, holder_name, exp_date, date_added, currently_used, user_id) |
 
 
 ## Testing Plans
 
 ### Unit Testing
 
-Currently we have unit tests set up that test:
+Currently, we have unit tests set up for testing:
 
    1.a. Adding a new member to the database and saving the returned object in a member variable.
         Fetching a different instance of that object in the database.
