@@ -8,16 +8,16 @@ Our database of choice is PostgreSQL. We are using the psycopg library as an ada
 
 ### Public API
 
-We have a singular DBAdaptor class that that backend teams can create an instance of in their classes to instantiate and manipulate various objects in the system. This adaptor class gives backend teams access to:
+We have a singular DBAdaptor class that backend teams can create an instance of in their classes to instantiate and manipulate various objects in the system. This adaptor class gives backend teams access to:
    - add methods:
    
       | Return Type | Method Call                                                          |
       |-------------|----------------------------------------------------------------------|
       | Object      | add_object_type(object_param_1, object_param_2, ..., object_param_n) |
       
-      - Take in several required parameters
-      - Access relevant DB table
-      - Input required parameters from method call into the table
+      - Takes in several required parameters
+      - Accesses relevant DB table
+      - Inputs required parameters from method call into the table
       - Returns an instance of the newly added object
       
    - get methods:
@@ -97,14 +97,14 @@ We have a singular DBAdaptor class that that backend teams can create an instanc
 | Boolean     | set_filter(self, new_information: dict(), obj_id)                    |
 | Boolean     | remove_filter(self, obj_id)                                          |
 
-### Credit Card API
+### API
 
 | Return Type | Method Call                                                                  |
 |-------------|------------------------------------------------------------------------------|
-| CreditCard  | add_object_type(object_param_1, object_param_2, ..., object_param_n)         |
-| CreditCard  | get_object_type(obj_id)                                                      |
-| CreditCard  | set_object_type(self, optional_change_param_1, ..., optional_change_param_n) |
-| Boolean     | remove_object_type(obj_id)                                                   |
+| CreditCard  | add_cc(self, cc_information: dict())                                         |
+| CreditCard  | get_cc(self, obj_id)                                                         |
+| CreditCard  | set_cc(self, new_information: dict(), obj_id)                                |
+| Boolean     | remove_cc(self, obj_id)                                                      |
 
 ### Private API
 
@@ -162,7 +162,7 @@ Currently, we have unit tests set up for testing:
 
    1.a. Adding a new member to the database and saving the returned object in a member variable.
         Fetching a different instance of that object in the database.
-        Checking that the two instances are equal to one another. 
+        Checking that the two instances are equal. 
    
    2.a. Retrieving a previously existing member from DB and instantiating an instance of a Member object.
         Then testing this against a premade Member object to ensure that the object parameters are identical.
@@ -180,31 +180,31 @@ Currently, we have unit tests set up for testing:
         Retrieving the same member from the DB after the changes have been made.
         Ensuring that this instance of the member is identical to a premade member object with the desired values in each parameter.
       
-   4.a. Deleting an instance of a previously existing member and ensuring that the boolean returned correctly indicates whether or not
-        the member is actually gone from the DB table.
+   4.a. Deleting an instance of a previously existing member and ensuring that the boolean returned correctly indicates whether
+        the member is removed from the DB table.
       
    4.b. Deleting a non-existing member from the DB and ensuring that the remove method returns false and correctly handles a non-               existing object in the system. 
       
 As we continue developing our adaptor we plan to develop similar tests for each different object in the system.
 
-More specifically, we will create almost identical tests for:
+More specifically, we will create nearly identical tests for:
    - Image objects
    - Post objects
    - Comment objects
    - Filter Objects
    - Credit card objects
    
-As well as more specific unit tests for each individual object once they are fully implemented in the system. 
+Additionally, we will have more specific unit tests for each individual object once fully implemented in the system. 
 
-Some edges cases we are looking out for:
+Edges cases we are looking out for:
    - Checking to make sure objects exist in the system before attempting to create instances of them.
-   - Making sure duplicate objects are not created.
-   - Making sure duplicate objects can not be created through changing the parameters of a different object with the set methods.
+   - Avoiding creation of duplicate objects. 
+   - Ensuring duplicate objects cannot be created through changing the parameters of a different object with the set methods.
 
 ### Integration Testing
 
 As we develop our current project we have to run the database servers and our basic Django project off of a localhost server. As the 
-Web Server teams get farther into development we will look to test our currently functioning DBAdaptor class with it being hosted on a 
+Web Server teams get further into development we will look into testing our currently functioning DBAdaptor class with it being hosted on a 
 universal server that can be accessed simultaneously by any team member or members of the backend teams. As such, we will work
 with backend teams to retest our current test suite to ensure that the public API is functioning correctly for the purposes of the 
 backend teams. 
