@@ -267,3 +267,47 @@ backend teams.
 ![alt-text](https://github.com/320-group4/High-Level-Requirements/blob/master/er1.png)
 
 
+## Equivalence Classes
+
+# Input
+Testing input into one table would represent testing inputs into all the tables because since all the tables are set up the same and the only differences being that they hold different data, if we can prove we can insert into one table, then we have proved that we can insert into all the tables.
+
+# Output
+Testing outputs is the same is inputs, if we can prove that we can get an output from one table then we have proved that we can get an output from all the tables.
+
+# Updating
+Updating is also the same, updating one datapoint from one table proves that we can update something from all the tables.
+
+# Deleting
+Finally, proving we can delete something from one table proves we can delete something from all the tables.
+
+
+## Edge Cases
+
+   1. Ensure inserting into a table does the right thing
+   1.a. Make sure data is what we want it to be
+      -CC num is 16 digites
+      -birthday month is between 1-12
+      -Birthday day is 1-30
+      -Make sure user type is either Member, Admin, or Idol
+      -Make sure CVV is either 3 or 4 digits
+      -Expiration data must be valid date
+      
+   1.b. Make sure it has an id so that we can update/delete this row
+   1.c. Make sure all the coloumns were trying to insert are there
+   
+   2. Ensure fetching from a table returns the right thing
+   2.a. Make sure id is valid
+   2.b. Make sure the column we're fetching is actually in the table
+   2.c. Make sure the column we're fetching is filled in and has data in it
+   
+   3. Ensure updating a table updates the right thing
+   3.a. Make sure that column exists
+   3.b. Make sure that id is valid
+   3.c. Make sure all our data is valid (see 1.a.)
+   
+   4. Ensure deleting from a table entry will delete it properly
+   4.a. Make sure id is valid
+
+
+
