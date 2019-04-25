@@ -255,12 +255,12 @@ This test is testing that we can change the url of the post successfully.  Being
 ### Important Cases and Edge Cases
 
    1. Make sure data critical to users verification is stored correctly
-      -CC num is 16 digits
-      -birthday month is between 1-12
-      -Birthday day is 1-30
-      -Make sure user type is either Member, Admin, or Idol
-      -Make sure CVV is either 3 or 4 digits
-      -Expiration data must be valid date
+      - CC num is 16 digits
+      - birthday month is between 1-12
+      - Birthday day is 1-30
+      - Make sure user type is either Member, Admin, or Idol
+      - Make sure CVV is either 3 or 4 digits
+      - Expiration data must be valid date
    
    2. Ensure fetching from a table returns the right thing
       - 2.a. Make sure id is valid
