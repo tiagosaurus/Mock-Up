@@ -52,115 +52,60 @@ in the system. This adaptor class gives backend teams access to:
       
 #### Member API
 
-| Return Type | Method Call                                                          |
-|-------------|----------------------------------------------------------------------|
-| Member     | add_object_type(object_param_1, object_param_2, ..., object_param_n) |
-
-| Return Type | Method Call             |
-|-------------|-------------------------|
-| Member      | get_object_type(obj_id) |
-
-| Return Type | Method Call                                                                  |
-|-------------|------------------------------------------------------------------------------|
-| Member      | set_object_type(self, optional_change_param_1, ..., optional_change_param_n) |
-      
-| Return Type | Method Call                |
-|-------------|----------------------------|
-| Boolean     | remove_object_type(obj_id) |
+| Return Type | Method Call                                                                                                                |
+|-------------|----------------------------------------------------------------------------------------------------------------------------|
+| Member      | add_member(self, user_id, first_name, last_name, email, pw, cc_num, invited_by, user_type, birthday, address, phone number, date_created)                                                                                                                              |           
+| Member      | get_member(self, obj_id)                                                                                                   |
+| Boolean     | set_member(self, new_information: dict(), obj_id)                                                                          | 
+| Boolean     | remove_member(self, obj_id)  
       
 #### Post API
 
 | Return Type | Method Call                                                          |
 |-------------|----------------------------------------------------------------------|
-| Post     | add_object_type(object_param_1, object_param_2, ..., object_param_n) |
-
-| Return Type | Method Call             |
-|-------------|-------------------------|
-| Post      | get_object_type(obj_id) |
-
-| Return Type | Method Call                                                                  |
-|-------------|------------------------------------------------------------------------------|
-| Post      | set_object_type(self, optional_change_param_1, ..., optional_change_param_n) |
-      
-| Return Type | Method Call                |
-|-------------|----------------------------|
-| Boolean     | remove_object_type(obj_id) |
+| Post        | add_post(self, post_information: dict())                             |
+| Boolean     | set_post(self, new_information: dict(), obj_id)                      |
+| Boolean     | remove_post(self, obj_id)                                            |
 
 #### Comment API
 
-| Return Type | Method Call                                                          |
-|-------------|----------------------------------------------------------------------|
-| Comment     | add_object_type(object_param_1, object_param_2, ..., object_param_n) |
-
-| Return Type | Method Call             |
-|-------------|-------------------------|
-| Comment      | get_object_type(obj_id) |
-
-| Return Type | Method Call                                                                  |
-|-------------|------------------------------------------------------------------------------|
-| Comment      | set_object_type(self, optional_change_param_1, ..., optional_change_param_n) |
-      
-| Return Type | Method Call                |
-|-------------|----------------------------|
-| Boolean     | remove_object_type(obj_id) |
+| Return Type | Method Call                                        |
+|-------------|----------------------------------------------------|
+| Comment     | add_comment(self, comment_information: dict())     |
+| Comment     | get_comment(self, obj_id)                          |
+| Boolean     | set_comment(self, new_information: dict(), obj_id) |
+| Boolean     | remove_comment(self, obj_id)                       | 
 
 #### Image API
 
 | Return Type | Method Call                                                          |
 |-------------|----------------------------------------------------------------------|
-| Image     | add_object_type(object_param_1, object_param_2, ..., object_param_n) |
-
-| Return Type | Method Call             |
-|-------------|-------------------------|
-| Image      | get_object_type(obj_id) |
-
-| Return Type | Method Call                                                                  |
-|-------------|------------------------------------------------------------------------------|
-| Image      | set_object_type(self, optional_change_param_1, ..., optional_change_param_n) |
-      
-| Return Type | Method Call                |
-|-------------|----------------------------|
-| Image     | remove_object_type(obj_id) |
+| Image       | add_image(self, image_information: dict())                           |
+| Image       | get_image(self, obj_id)                                              |
+| Image       | set_image(self, new_information: dict(), obj_id)                     |
+| Boolean     | remove_image(self, obj_id)                                           |
 
 #### Filter API
 
 | Return Type | Method Call                                                          |
 |-------------|----------------------------------------------------------------------|
-| Filter     | add_object_type(object_param_1, object_param_2, ..., object_param_n) |
-
-| Return Type | Method Call             |
-|-------------|-------------------------|
-| Filter      | get_object_type(obj_id) |
-
-| Return Type | Method Call                                                                  |
-|-------------|------------------------------------------------------------------------------|
-| Filter      | set_object_type(self, optional_change_param_1, ..., optional_change_param_n) |
-      
-| Return Type | Method Call                |
-|-------------|----------------------------|
-| Boolean     | remove_object_type(obj_id) |
+| Boolean     | add_filter(self, filter_information: dict())                         |
+| Filter      | get_filter(self, obj_id)                                             |
+| Boolean     | set_filter(self, new_information: dict(), obj_id)                    |
+| Boolean     | remove_filter(self, obj_id)                                          |
 
 ### Credit Card API
 
-| Return Type | Method Call                                                          |
-|-------------|----------------------------------------------------------------------|
-| CreditCard     | add_object_type(object_param_1, object_param_2, ..., object_param_n) |
-
-| Return Type | Method Call             |
-|-------------|-------------------------|
-| CreditCard      | get_object_type(obj_id) |
-
 | Return Type | Method Call                                                                  |
 |-------------|------------------------------------------------------------------------------|
-| CreditCard      | set_object_type(self, optional_change_param_1, ..., optional_change_param_n) |
-      
-| Return Type | Method Call                |
-|-------------|----------------------------|
-| Boolean     | remove_object_type(obj_id) |
+| CreditCard  | add_object_type(object_param_1, object_param_2, ..., object_param_n)         |
+| CreditCard  | get_object_type(obj_id)                                                      |
+| CreditCard  | set_object_type(self, optional_change_param_1, ..., optional_change_param_n) |
+| Boolean     | remove_object_type(obj_id)                                                   |
 
 ### Private API
 
-We currently have private constructors that can only be accessed through privae method calls in our DBAdaptor class 
+We currently have private constructors that can only be accessed through private method calls in our DBAdaptor class 
 which instantiate instances of:
    - Member objects
    - Post objects
