@@ -10,7 +10,7 @@ Our design is abiding by the principles of having a tightly coupled set of objec
 
 Similarly, it allows our objects to establish a one to one connection with their associated table in the database, allowing for single instantiations of objects to communicate directly with the database. 
 
-Overall, the database adapter, namely models.py in the case of our Django project, provides factory methods to introduce functionality such as getting, setting, deleting, and creating system objects. In this case there are be private methods that allow our team to create objects with private constructors and return them to the rest of the system. This in turn allows the other teams to use the objects for whatever purposes they need to. Otherwise, there will be a public API with get, set, remove, and add methods for each system object that are visible to the other teams to use. In this case, the database knows about the various objects in the system.
+The database adapter, namely models.py in the case of our Django project, provides factory methods to introduce functionality such as *getting*, *setting*, *deleting*, and *creating* system objects. These are private methods that allow our team to create objects with private constructors and return them for use within the rest of the system. This allows other teams within our track to use these objects for whatever purposes needed. We also have a public API with *get*, *set*, *add*, and *remove* methods for each system object that are visible to the other teams for their own uses. In this case, the database knows of the various objects within the system.
       
 ## Public API
 
@@ -69,8 +69,7 @@ Overall, the database adapter, namely models.py in the case of our Django projec
 
 ## Private API
 
-We currently have private constructors that can only be accessed through private method calls in our DBAdaptor class 
-which instantiate instances of:
+We currently have private constructors that can only be accessed through private method calls in our DBAdaptor class which instantiate instances of:
    - Member objects
    - Post objects
    - Image objects
