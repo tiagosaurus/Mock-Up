@@ -206,6 +206,82 @@ universal server that can be accessed simultaneously by any team member or membe
 with backend teams to retest our current test suite to ensure that the public API is functioning correctly for the purposes of the 
 backend teams. 
 
+## Test Descriptions
+
+Here is the Low Level Documentation of what each specific test is doing.  
+
+# Image Test Cases
+
+Helper Functions: As is the case with the other object classes, we need to be able to create instances of each object and associated      objects following it in the hierarchy for testing purposes. For the Image test cases, we create the following helper functions:
+   - Create Member: 
+      - Pre-Conditions/Params: Name, invitedBy (optional param)
+      - Post-Conditions: Returns a Member object with the following params set: visibility, invited_by, email, password, username,                                points, user_type, is_verified, birthday, and address.
+   - Create Post: 
+      - Pre-Conditions: Content, User (optional)
+      - Post-Conditions: Returns a Post object with the following params set: user, url, is_flagged,content, and by_admin.
+   - Create Image:
+      - Pre-Conditions: User, post, image.
+      - Post-Conditions: Returns a Image object with the following params set: user, post, current_image, is_flagged, and by_admin.
+
+Case 1: Creating Image
+   This case tests that the creation of an image works as intended. It works by creating a member and post object first, and using those    created objects as parameters to make an Image object.  There is another image variable that is essentially a temporary photo file      object created to test for comparisons
+   
+   Assert Statements:
+      - Test that the image variable is the same instance/object as that image built through our API's create call.  
+      - Test that the object count is equal to one.  Basically, to ensure create didn't make a duplicate. 
+
+Case 2: Creating Image Test # 2
+   This case tests that the creation of an image actually works by adding the new image to the database. It is essentially the same as      test case #1, but is ensuring that our API create call adds data to the database
+   
+   Assert Statements:
+      - Test that the image variable is the same instance/object as that image built through our API's create call.  
+      - Test that the object count is equal to two.  Basically, to ensure our first test case actually added to the database.  
+      
+Case 3: Getting Image attribute
+  This case tests that the API get call works as intended to retrieve the Image data for a specific attribute.  We will test that the     original_image_id matches to what is in the database.  It works by first creating the respective Member and Post Objects with that the   Image object uses as parameters for creation.  We then get the original_image_id and do an assert statement to ensure they are equal. 
+  
+  Assert Statements:
+      - Test that the original_image_id recieved from GET call is actually the ID specified.  
+  
+Case 4: Setting Image attribute
+   This case tests that the API set call works as intended to update the associated attribute field for the Image object to be changed.    It works by first creating the respective Member and Post Objects with that the Image object uses as parameters for creation.  Then,    a new image ID is set and this is compared to the associated original_image_id that is retrieved from the database.
+   
+   Assert Statements:
+      -Test that the updated original_image_id was reflected in the database and is equivalent. 
+
+Case 5: Deleting Image attribute
+   This case tests that the API delete call works as intended to remove the associated Image is removed from the database. After            creation of the image, we do an assert statement to see that the image is in the database.  We then delete the image with the use of    it's orignal_image_id.  Finally, we check to see that the database is empty as it should be
+   
+   Assert Statements:
+      -Test that the number of Image objects in database is 1 after creation.
+ 
+# Filter Test Cases
+Helper Functions: As is the case with the other object classes, we need to be able to create instances of each object and associated    objects following it in the hierarchy for testing purposes. For the Image test cases, we create the following helper functions:
+   - Create Member: 
+      - Pre-Conditions/Params: Name, invitedBy (optional param)
+      - Post-Conditions: Returns a Member object with the following params set: visibility, invited_by, email, password, username,                                points, user_type, is_verified, birthday, and address.
+   - Create Post: 
+      - Pre-Conditions: Content, User (optional)
+      - Post-Conditions: Returns a Post object with the following params set: user, url, is_flagged,content, and by_admin.
+   - Create Image:
+      - Pre-Conditions: User, post, image.
+      - Post-Conditions: Returns a Image object with the following params set: user, post, current_image, is_flagged, and by_admin.
+   - Create Filter:
+      - Pre-Conditions: Image
+      - Post-Conditions: Returns a Filter object with the following params set: image, filter_name.
+      
+Case 1: Creating a Filter Object
+   This case tests that the creation of an Filter object works as intended. It works by creating a member, post, and image object first,    and using those created objects as parameters to make an Filter object.  There is another filter variable that is essentially a          temporary photo filter object created to test for comparisons.
+   
+   Assert Statements:
+      - Test that the filter variable is the same instance/object as that filter built through our API's create call.  
+      - Test that the object count is equal to one.  Basically, to ensure create didn't make a duplicate. 
+ 
+ Case 2: Setting a Filter Object's Attribute
+   This case test that the updating of a filter object works as intended.  We will be testing it by changing the filter_id attribute and    ensuring that it is changed in the database as well.
+   
+   Assert Statements:
+      - Test that the updated filter_id was reflected in the database and is equivalent. 
 
 ## Class Diagram
 
