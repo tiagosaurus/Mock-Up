@@ -263,17 +263,17 @@ This test is testing that we can change the url of the post successfully.  Being
       -Expiration data must be valid date
    
    2. Ensure fetching from a table returns the right thing
-   2.a. Make sure id is valid
-   2.b. Make sure the column we're fetching is actually in the table
-   2.c. Make sure the column we're fetching is filled in and has data in it
+      - 2.a. Make sure id is valid
+      - 2.b. Make sure the column we're fetching is actually in the table
+      - 2.c. Make sure the column we're fetching is filled in and has data in it
    
    3. Ensure updating a table updates the right thing
-   3.a. Make sure that column exists
-   3.b. Make sure that id is valid
-   3.c. Make sure all our data is valid (see 1.a.)
+      - 3.a. Make sure that column exists
+      - 3.b. Make sure that id is valid
+      - 3.c. Make sure all our data is valid (see 1.a.)
    
    4. Ensure deleting from a table entry will delete it properly
-   4.a. Make sure id is valid
+      - 4.a. Make sure id is valid
 
 
 
