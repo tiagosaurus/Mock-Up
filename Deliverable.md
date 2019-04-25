@@ -170,11 +170,18 @@ Note: When the *Member* object was instantiated, it was set to a *Member* object
 
 *test_get_specific_data()*
 
+Description: 
+
 In this test we are testing to see if we can get data from the database.  We first make a new Member with a name of "user_name".  We then call for the username of that variable we just created using the <memebr>.data['username'] to retrieve the user name of the variable before the dot.  We then check this username agaist the username that we used when creating the Member, "user_name", to see if the username of the created Member is the same as the user name we used to create the member.
       
 ***Test Case #4: Retrieving a Member Attribute By ID***
    
 *test_get_byid()*
+
+Description:
+
+Steps: 
+
 
 This test is designed to test that we can retrieve data from the tables using the ID of each row.  We first start by creating a new Member with the user name "new-user".  We then get the ID if this member by using the same <member>.data['id'] call we made earlier, but this same asking for the "id" field.  We then make a call asking for the whole Member object by making the call Member.objects.get(id=new_member_id).data()['username'], passing in the id we just retrieved into the id field to that the get call can return back the whole Member object.  With this Member object, we can use <member>.data()['username'] again, but only asking for the user name.  Lastly we check to see if this user name is equal to the name "new-user" which we used at the beginning to set the name of the new Member.
       
@@ -182,11 +189,19 @@ This test is designed to test that we can retrieve data from the tables using th
    
 *test_edit()*
 
+Description:
+
+Steps: 
+
 This test is testing if we can make an edit to the Member object.  We first start by creating a new Member object, and setting its user name to "new-user".  We then change its user name by calling the call <member>.set_username("USER") but pass in a different name to what we oroginially made it to be.  After this we have to call the user name of this member from the Member table by using the same call <member>.data['username'].  We then test to see if this username is equal to "USER".
    
 ***Test Case #5: Setting Member Points***
 
 *test_set_points()*
+
+Description:
+
+Steps: 
 
 This test is to show that we can change the point value of each member quickly and easily.  We start off by creating a new Member, but leaving out the points field and not defining it in the Member creation.  We then take this member and call the method set_points(), and set the amount of points to whetever, we can set it to 1.  When we retrieve the amount of points that the member has, and check to see that it equals 1.
 
@@ -194,18 +209,29 @@ This test is to show that we can change the point value of each member quickly a
 
 *test_delete()*
 
+Description:
+
+Steps:
+
 Here we are testing to see if we can create and delete a Member successfully.  We start by creating a new member, then checking to see if it is in the table by calling Member.objects.count() and seeing if that returns a 1.  We then retrieve the id of that object in the table, and delete this by calling Member.objects.filter(id=id).delete(), this will delete the object in the table of that id.  Lastly we call the Member count again and check to see if it is now back at 0, to show that this Member has successfully been deleted.
 
 ***Test Case #7: Remove Method for Member***
 
 *test_remove_method()*
 
+Description:
+
+Steps: 
+
 This test is testing to see if our remove method is working properly.  This remove_member() methond is defined in our Models.py.  We start off by first creating a member, then once this is complete we remove the member using the function remove_member().  We then test to see if the count of the Members table is equal to 0.
 
 ***Test Case #8: Retrieving Member Attribute Invitedby***
 
-
 *test_inviteby()*
+
+Description:
+
+Steps:
 
 In this test, we are testing to see if we can propery retireve the person who the member was invited by.  We start off by creating two members, one is an idol and the other is a member in which we add the idol as the person who the member was invited by.  We then retrieve the user that invited the member, and extract the user name from that user.  We then test to see  if this user name is equal to the user name of the idol.
 
