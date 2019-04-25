@@ -155,7 +155,7 @@ Helper Functions: As is the case with the other object classes, we need to be ab
 
 Description: This case tests that the creation of an image works as intended.
 
-Steps: 
+Steps:
 
 1. Create a *member* object and a *post* object. 
 2. Use the created objects from #1 as parameters in order to create a new *image* object. Note: There is another another image variable that is a temporary photo file object created in order to test for comparisons.
