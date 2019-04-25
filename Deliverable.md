@@ -151,13 +151,19 @@ Helper Functions: As is the case with the other object classes, we need to be ab
       - Pre-Conditions: User, post, image.
       - Post-Conditions: Returns a Image object with the following params set: user, post, current_image, is_flagged, and by_admin.
 
-Case 1: Creating Image
-   This case tests that the creation of an image works as intended. It works by creating a member and post object first, and using those    created objects as parameters to make an Image object.  There is another image variable that is essentially a temporary photo file      object created to test for comparisons
-   
-   Assert Statements:
-      - Test that the image variable is the same instance/object as that image built through our API's create call.  
-      - Test that the object count is equal to one.  Basically, to ensure create didn't make a duplicate. 
+***Test Case #1: Creating an Image***
 
+Description: This case tests that the creation of an image works as intended.
+
+Steps: 
+
+1. Create a *member* object and a *post* object. 
+2. Use the created objects from #1 as parameters in order to create a new *image* object. Note: There is another another image variable that is a temporary photo file object created in order to test for comparisons.
+
+      Assert Statements: 
+      - Test that the image variable is the same instance/object as that image built through the API's create call.  
+      - Test that the object count is equal to one, ensuring no duplicate creation. 
+      
 Case 2: Creating Image Test # 2
    This case tests that the creation of an image actually works by adding the new image to the database. It is essentially the same as      test case #1, but is ensuring that our API create call adds data to the database
    
