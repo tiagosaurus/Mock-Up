@@ -253,26 +253,26 @@ This test is testing that we can change the url of the post successfully.  Being
 
 ### Important Cases and Edge Cases
 
-   1. Make sure data critical to users verification is stored correctly
-      -CC num is 16 digits
-      -birthday month is between 1-12
-      -Birthday day is 1-30
-      -Make sure user type is either Member, Admin, or Idol
-      -Make sure CVV is either 3 or 4 digits
-      -Expiration data must be valid date
+   1. Ensure that data critical to a user's verification is stored correctly in the database
+      - Credit Card number is 16 digits
+      - Ensure 'cvv' is either 3 or 4 digits
+      - Expiration date must be valid (and in the future)
+      - Birth month is between numeric values 1 - 12
+      - Birth day is between numeric values 1 - 30
+      - Ensure user type is either Member, Admin, or Idol
    
-   2. Ensure fetching from a table returns the right thing
-      - 2.a. Make sure id is valid
-      - 2.b. Make sure the column we're fetching is actually in the table
-      - 2.c. Make sure the column we're fetching is filled in and has data in it
+   2. Ensure retrieving data from database table returns expected value
+      - 2.a. Ensure ID is valid
+      - 2.b. Ensure the column retrieving from is in database table
+      - 2.c. Ensure the column we're retrieving from is filled and contains data
    
    3. Ensure updating a table updates the right thing
-      - 3.a. Make sure that column exists
-      - 3.b. Make sure that id is valid
-      - 3.c. Make sure all our data is valid (see 1.a.)
+      - 3.a. Ensure column exists
+      - 3.b. Ensure id is valid
+      - 3.c. Ensure all data is valid (see #1)
    
-   4. Ensure deleting from a table entry will delete it properly
-      - 4.a. Make sure id is valid
+   4. Ensure deleting from a table entry removes from database
+      - 4.a. Ensure id is valid
 
 
 
