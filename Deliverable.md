@@ -10,7 +10,7 @@ Our design is abiding by the principles of having a tightly coupled set of objec
 
 Similarly, it allows our objects to establish a one to one connection with their associated table in the database, allowing for single instantiations of objects to communicate directly with the database. 
 
-Overall, the database adapter, namely models.py in the case of our Django project, provides factory methods to introduce functionality such as getting, setting, deleting, and creating system objects. In this case there are be private methods that allow our team to create objects with private constructors and return them to the rest of the system. This in turn allows the other teams to use the objects for whatever purposes they need to. Otherwise, there will be a public API with get, set, remove, and add methods for each system object that are visible to the other teams to use. In this case, the database knows about the various objects in the system.
+The database adapter, namely models.py in the case of our Django project, provides factory methods to introduce functionality such as *getting*, *setting*, *deleting*, and *creating* system objects. These are private methods that allow our team to create objects with private constructors and return them for use within the rest of the system. This allows other teams within our track to use these objects for whatever purposes needed. We also have a public API with *get*, *set*, *add*, and *remove* methods for each system object that are visible to the other teams for their own uses. In this case, the database knows of the various objects within the system.
       
 ## Public API
 
@@ -69,8 +69,7 @@ Overall, the database adapter, namely models.py in the case of our Django projec
 
 ## Private API
 
-We currently have private constructors that can only be accessed through private method calls in our DBAdaptor class 
-which instantiate instances of:
+We currently have private constructors that can only be accessed through private method calls in our DBAdaptor class which instantiate instances of:
    - Member objects
    - Post objects
    - Image objects
@@ -254,26 +253,23 @@ This test is testing that we can change the url of the post successfully.  Being
 
 ### Important Cases and Edge Cases
 
-   1. Make sure data critical to users verification is stored correctly
-      -CC num is 16 digits
-      -birthday month is between 1-12
-      -Birthday day is 1-30
-      -Make sure user type is either Member, Admin, or Idol
-      -Make sure CVV is either 3 or 4 digits
-      -Expiration data must be valid date
+   1. Ensure that data critical to a user's verification is stored correctly in the database
+      - Credit card number is 16 digits
+      - Ensure 'cvv' is either 3 or 4 digits
+      - Expiration date must be valid (and in the future)
+      - Birth month is between numeric values 1 - 12
+      - Birth day is between numeric values 1 - 30
+      - Ensure user type is either Member, Admin, or Idol
    
-   2. Ensure fetching from a table returns the right thing
-      - 2.a. Make sure id is valid
-      - 2.b. Make sure the column we're fetching is actually in the table
-      - 2.c. Make sure the column we're fetching is filled in and has data in it
+   2. Ensure retrieving data from database table returns expected value
+      - 2.a. Ensure ID is valid
+      - 2.b. Ensure the column retrieving from is in database table
+      - 2.c. Ensure the column we're retrieving from is filled and contains data
    
    3. Ensure updating a table updates the right thing
-      - 3.a. Make sure that column exists
-      - 3.b. Make sure that id is valid
-      - 3.c. Make sure all our data is valid (see 1.a.)
+      - 3.a. Ensure column exists
+      - 3.b. Ensure id is valid
+      - 3.c. Ensure all data is valid (see #1)
    
-   4. Ensure deleting from a table entry will delete it properly
-      - 4.a. Make sure id is valid
-
-
-
+   4. Ensure deleting from a table entry removes from database
+      - 4.a. Ensure id is valid
