@@ -23,7 +23,7 @@ Overall, the database adapter, namely models.py in the case of our Django projec
 | Boolean     | set_member(self, new_information: dict(), obj_id)                                                                          | 
 | Boolean     | remove_member(self, obj_id)  
       
-#### Post API
+### Post API
 
 | Return Type | Method Call                                                          |
 |-------------|----------------------------------------------------------------------|
